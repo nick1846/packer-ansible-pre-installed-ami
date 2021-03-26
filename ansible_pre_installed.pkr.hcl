@@ -14,7 +14,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 source "amazon-ebs" "linux2" {
   access_key    = "${var.aws_access_key}"
   secret_key    = "${var.aws_secret_key}"
-  ami_name      = "awx ami ${local.timestamp}"
+  ami_name      = "ansible ami ${local.timestamp}"
   instance_type = "t2.micro"
   region        = "us-east-1"  
   source_ami_filter {
