@@ -49,7 +49,7 @@ build {
         "sudo python3 -m pip install docker-compose",
         "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose", 
         "sudo pip3 install docker",  
-        "git clone https://github.com/nick1846/awx-new.git"          
+        "git clone https://github.com/nick1846/ansible-awx.git"          
     ]
   }
   provisioner "ansible-local" {
@@ -63,7 +63,7 @@ build {
   
   provisioner "shell" {
     inline = [
-        "ansible-playbook -i ./awx-new/installer/inventory ./awx-new/installer/install.yml"
+        "ansible-playbook -i ./ansible-awx/installer/inventory ./ansible-awx/installer/install.yml"
     ]
   }  
   
